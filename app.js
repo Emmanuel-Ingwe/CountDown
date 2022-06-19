@@ -31,4 +31,12 @@ let futureDate = new Date(2020, 4, 24, 11, 30, 0);
 const year = futureDate.getFullYear();
 const hours = futureDate.getHours();
 const minutes = futureDate.getMinutes();
-giveaway.textContent = `giveaway ends on ${year} ${hours} ${minutes}am`;
+
+let month = futureDate.getMonth();
+month = months[month];
+const date = futureDate.getDate();
+
+const weekday = futureDate.getDate();
+
+
+giveaway.textContent = `giveaway ends on ${date} ${month} ${year} ${hours}:${minutes}am`;
