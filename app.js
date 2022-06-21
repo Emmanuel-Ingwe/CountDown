@@ -40,3 +40,19 @@ const weekday = weekday[futureDate.getDate()];
 
 
 giveaway.textContent = `giveaway ends on ${date} ${month} ${year} ${hours}:${minutes}am`;
+
+const futureTime = futureDate.getTime();
+
+function getRemaningTime() {
+  const today = new Date().getTime();
+  const t = futureTime - today;
+
+  const oneDay = 24 * 60 * 60 * 1000;
+  const oneHour = 60 * 60 * 1000;
+  const oneMinute = 60 * 1000;
+
+  let days = t / oneDay;
+  
+}
+
+getRemaningTime();
