@@ -39,7 +39,7 @@ const date = futureDate.getDate();
 const weekday = weekday[futureDate.getDate()];
 
 
-giveaway.textContent = `giveaway ends on ${date} ${month} ${year} ${hours}:${minutes}am`;
+giveaway.textContent = `giveaway ends on ${date} ${month} ${year} ${hours}:${minutes}`;
 
 const futureTime = futureDate.getTime();
 
@@ -52,7 +52,17 @@ function getRemaningTime() {
   const oneMinute = 60 * 1000;
 
   let days = t / oneDay;
-  
+  days = Math.floor(days);
+  let hours = Math.floor((t % oneDay) / oneHour);
+  let minutes = Math.floor((t % oneHour) / oneMinute);
+  let seconds = Math.floor((t % oneMinute) / 1000);
+
+  // SetValuesArrays
+  const values = [days, hours, minutes, seconds];
+
+  items.forEach((item, index) => {
+    item.innerHTML = values[index];
+  });
 }
 
 getRemaningTime();
